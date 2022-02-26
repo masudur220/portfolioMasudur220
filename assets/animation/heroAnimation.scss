@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css?family=Special+Elite);
+
+
+.code {
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.5;
+  animation: 50s 1s scroll infinite linear;
+}
+
+.code-wrapper {
+  position: relative;
+}
+
+pre {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+pre + pre {
+  left: -90%;
+}
+pre + pre + pre {
+  left: -180%;
+}
+
+@keyframes scroll{
+  100%{
+    transform: translate3d(180%, 0, 0);
+  }
+}
+
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: rgb(207, 207, 207);
+	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;	
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;	
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: 0;
+	overflow: auto;	
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: transparent;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em .5em;
+	border-radius: .3em;
+}
+
+
+

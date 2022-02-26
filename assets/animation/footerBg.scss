@@ -1,0 +1,36 @@
+$curveCount: 6;
+
+.wrap {
+  background: transparent;
+  position: absolute;
+  left: 0;
+  top: 0%;
+  z-index: -1;
+  svg { display: block; margin: 0 auto; }
+  width: 100%;
+}
+
+.curve {
+  stroke-width: 1px;
+  stroke: rgb(160, 160, 160);
+  stroke-opacity: 0;
+
+  
+  path {
+   transform-origin: center 100px; 
+  }
+  
+  @for $i from 1 through $curveCount {
+    & path:nth-child(#{$i}) {
+        animation: curve 6s linear $i*1.2s infinite;
+    }
+  }
+}
+
+ @keyframes curve {
+  0% { transform: none; stroke-opacity:0; }
+  50% { transform: rotateX(360deg) scaleY(1);
+        stroke-opacity: .4; }
+   70% { /* transform: skewY(-2deg); */ }
+  100% { transform: none; stroke-opacity:0;}
+} 
